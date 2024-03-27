@@ -13,7 +13,15 @@ class Objeto{
     desenha_img(){
     }
 
-    colid(objeto) {
+    colid(objeto){
+        if((this.x < objeto.x + objeto.w)&&
+        (this.x + this.w > objeto.x)&&
+        (this.y < objeto.y + objeto.h)&&
+        (this.y + this.h > objeto.y)){
+            return true
+        }else{
+            false
+        }
     }
 }
 class Tanque extends Objeto{
@@ -24,7 +32,11 @@ class Tanque extends Objeto{
     frame = 1
     tempo = 0
 
+<<<<<<< HEAD
     atualiza_tanque(){
+=======
+ atualiza_tanque(){
+>>>>>>> 5170a93d017c20ba6570fcaf9a66646d70ec9e79
         this.x += this.dirX
         this.y += this.dirY
         
@@ -49,7 +61,18 @@ class Tanque extends Objeto{
     }
     
     colid(objeto){
+<<<<<<< HEAD
         
+=======
+        if((this.x < objeto.x + objeto.w)&&
+        (this.x + this.w > objeto.x)&&
+        (this.y < objeto.y + objeto.h)&&
+        (this.y + this.h > objeto.y)){
+            return true
+        }else{
+            false
+        }
+>>>>>>> 5170a93d017c20ba6570fcaf9a66646d70ec9e79
     }
 }
 

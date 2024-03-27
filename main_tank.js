@@ -10,11 +10,61 @@ let text5 = new Text()
 let grupoTiros = [] 
 let game2 = document.getElementById('game2')
 
+<<<<<<< HEAD
 function gameOver(){
     if(tanque.vida <= 0){
         jogar = false
         game2.style.display = "block"
     }
+=======
+
+
+
+
+
+document.addEventListener('keydown', (e)=>{
+    // console.log(e.key)
+    if(e.key === 'a' || e.key === 'ArrowLeft' || e.key === 'A'){
+        tanque.dirX -= 2
+    }
+    else if(e.key === 'd' || e.key === 'ArrowRight' || e.key === 'D'){
+        tanque.dirX += 2
+    }
+    else if(e.key === 'w' || e.key === 'ArrowUp' || e.key === 'W'){
+        tanque.dirY -= 2
+    }
+    else if(e.key === 's' || e.key === 'ArrowDown' || e.key === 'S'){
+        tanque.dirY += 2
+    }
+})
+
+document.addEventListener('keyup', (e)=> {
+    // console.log(e.key)
+    if(e.key === 'a' || e.key === 'ArrowLeft' || e.key === 'A'){
+        tanque.dirX = 0
+    }
+    else if(e.key === 'd' || e.key === 'ArrowRight' || e.key === 'D'){
+        tanque.dirX = 0
+    }
+    else if(e.key === 'w' || e.key === 'ArrowUp' || e.key === 'W'){
+        tanque.dirY = 0
+    }
+    else if(e.key === 's' || e.key === 'ArrowDown' || e.key === 'S'){
+        tanque.dirY = 0
+    }
+})
+
+
+function gameOver(){}
+
+function colisao(){
+    grupoInimigos.forEach((inimigo)=>{
+        if(tanque.colid(inimigo)){
+            grupoInimigos.splice(grupoInimigos.indexOf(inimigo), 1)
+            tanque.vida -= 1
+        }
+    })
+>>>>>>> 5170a93d017c20ba6570fcaf9a66646d70ec9e79
 }
 
 document.addEventListener('keydown', (e)=>{
@@ -79,8 +129,12 @@ function resetar(){
     Inimigos = 0
     grupoInimigos = 0
     grupoTiros = 0
+<<<<<<< HEAD
     window.location.reload();
     
+=======
+    window.location.reload(); 
+>>>>>>> 5170a93d017c20ba6570fcaf9a66646d70ec9e79
 }
 
 setInterval(main,10)
