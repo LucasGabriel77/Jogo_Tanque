@@ -7,19 +7,79 @@ let text2 = new Text()
 let text3 = new Text()
 let text4 = new Text()
 let text5 = new Text()
-let grupoTiros = [] 
 let game2 = document.getElementById('game2')
-
-<<<<<<< HEAD
-function gameOver(){
-    if(tanque.vida <= 0){
-        jogar = false
-        game2.style.display = "block"
+let grupoTiros = []
+let tiros = {
+    des(){
+        grupoTiros.forEach((tiro)=>{
+            tiro.des_tiro()
+        })
+    },
+    atual(){
+        grupoTiros.forEach((tiro)=>{
+            tiro.mov()
+            if(tiro.y <= -10){
+                grupoTiros.splice(tiro[0],1)
+            }
+        })
     }
-=======
+}
 
+let jogar = true
 
+document.addEventListener('keypress', (e)=>{
+    if (e.key === 'l' || e.key === 'L') {
+        grupoTiros.push(new Tiro(tanque.x - 2 + tanque.w / 1, tanque.y + 30, 10, 10, "../Assets/tiro1.png"))
+    }
+})
 
+let grupoInimigos = []
+let inimigos = {
+    time1: 0, 
+    time2: 0,
+    time3: 0,
+    criaInimigos(){
+        this.time1 += 1
+        this.time2 += 1
+        let pos_y = Math.floor(Math.random() * (320 - 140) + 140)
+        let pos_y2 = Math.floor(Math.random() * (320 - 140) + 140)
+        if(this.time1 >=100){
+            this.time1 = 0
+            grupoInimigos.push(new Inimigos(1100, pos_y,70,70, "../Assets/tanque_inimigo.png"))
+        }
+        if(this.time2 >=200){
+            this.time2 = 0
+            grupoInimigos.push(new Inimigos(1250,pos_y2,70,70, "../Assets/tanque_inimigo.png"))
+        }
+    },
+    des(){
+        grupoInimigos.forEach((inimig)=>{
+            inimig.desenha_img()
+            console.log(inimig)
+        })
+    },
+    destroiInimigo(){
+        grupoTiros.forEach((tiro)=>{
+            grupoInimigos.forEach((inimigo)=>{
+                if(tiro.colid(inimigo)){
+                    grupoTiros.splice(grupoTiros.indexOf(tiro), 1)
+                    grupoInimigos.splice(grupoInimigos.indexOf(inimigo), 1)
+                    tanque.pts +=1
+                }
+            })
+        })
+    },
+    atual(){
+        this.criaInimigos()
+        this.destroiInimigo()
+        grupoInimigos.forEach((inimigo)=>{
+            inimigo.mov()
+            if(inimigo.x <= 0){ ((tanque.vida -=1) && (
+                grupoInimigos.splice(grupoInimigos.indexOf(inimigo),1)))
+            }
+        })
+    }
+}
 
 
 document.addEventListener('keydown', (e)=>{
@@ -55,7 +115,12 @@ document.addEventListener('keyup', (e)=> {
 })
 
 
-function gameOver(){}
+function gameOver(){
+    if(tanque.vida <= 0){
+        jogar = false
+        game2.style.display = "block"
+    }
+}
 
 function colisao(){
     grupoInimigos.forEach((inimigo)=>{
@@ -64,45 +129,7 @@ function colisao(){
             tanque.vida -= 1
         }
     })
->>>>>>> 5170a93d017c20ba6570fcaf9a66646d70ec9e79
 }
-
-document.addEventListener('keydown', (e)=>{
-    // console.log(e.key)
-    if(e.key === 'a' || e.key === 'ArrowLeft' || e.key === 'A'){
-        tanque.dirX -= 2
-    }
-    else if(e.key === 'd' || e.key === 'ArrowRight' || e.key === 'D'){
-        tanque.dirX += 2
-    }
-    else if(e.key === 'w' || e.key === 'ArrowUp' || e.key === 'W'){
-        tanque.dirY -= 2
-    }
-    else if(e.key === 's' || e.key === 'ArrowDown' || e.key === 'S'){
-        tanque.dirY += 2
-    }
-})
-
-document.addEventListener('keyup', (e)=> {
-    // console.log(e.key)
-    if(e.key === 'a' || e.key === 'ArrowLeft' || e.key === 'A'){
-        tanque.dirX = 0
-    }
-    else if(e.key === 'd' || e.key === 'ArrowRight' || e.key === 'D'){
-        tanque.dirX = 0
-    }
-    else if(e.key === 'w' || e.key === 'ArrowUp' || e.key === 'W'){
-        tanque.dirY = 0
-    }
-    else if(e.key === 's' || e.key === 'ArrowDown' || e.key === 'S'){
-        tanque.dirY = 0
-    }
-})
-
-function colisao(){
-
-}
-
 
 function desenha(){  
 
@@ -129,12 +156,7 @@ function resetar(){
     Inimigos = 0
     grupoInimigos = 0
     grupoTiros = 0
-<<<<<<< HEAD
     window.location.reload();
-    
-=======
-    window.location.reload(); 
->>>>>>> 5170a93d017c20ba6570fcaf9a66646d70ec9e79
 }
 
 setInterval(main,10)

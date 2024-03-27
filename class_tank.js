@@ -8,9 +8,14 @@ class Objeto{
     }
 
     desenhaObjeto(){
+        des.fillStyle = 'blue'
+        des.fillRect(this.x, this.y, this.w, this.h)
     }
 
     desenha_img(){
+        let img = new Image()
+        img.src = this.a
+        des.drawImage(img,this.x,this.y,this.w,this.h)
     }
 
     colid(objeto){
@@ -32,11 +37,8 @@ class Tanque extends Objeto{
     frame = 1
     tempo = 0
 
-<<<<<<< HEAD
+
     atualiza_tanque(){
-=======
- atualiza_tanque(){
->>>>>>> 5170a93d017c20ba6570fcaf9a66646d70ec9e79
         this.x += this.dirX
         this.y += this.dirY
         
@@ -61,9 +63,6 @@ class Tanque extends Objeto{
     }
     
     colid(objeto){
-<<<<<<< HEAD
-        
-=======
         if((this.x < objeto.x + objeto.w)&&
         (this.x + this.w > objeto.x)&&
         (this.y < objeto.y + objeto.h)&&
@@ -72,7 +71,6 @@ class Tanque extends Objeto{
         }else{
             false
         }
->>>>>>> 5170a93d017c20ba6570fcaf9a66646d70ec9e79
     }
 }
 
@@ -88,5 +86,5 @@ class Tiro extends Objeto{
 
 }
 
-class Texto {
+class Text{
 }
