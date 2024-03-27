@@ -132,6 +132,29 @@ function colisao(){
 }
 
 function desenha(){  
+    if(jogar){
+        bg.desenha_img()
+        tiros.des()
+        tanque.desenha_img()
+        inimigos.des()
+        text1.desenhaTexto('Pontos:', 1000, 20, 'yellow', '20px times')
+        text2.desenhaTexto(tanque.pts, 1065, 20, 'yellow', '20px times')
+        text3.desenhaTexto('Vida:', 800,20, 'yellow', '20px times')
+        text4.desenhaTexto(tanque.vida,850,20, ' yellow', '20px times')
+        if(tanque.pts>= 50){
+            fase2.desenha_img()
+            tiros.des()
+            tanque.desenha_img()
+            inimigos.des()
+            text1.desenhaTexto('Pontos:', 1000, 20, 'yellow', '20px times')
+            text2.desenhaTexto(tanque.pts, 1065, 20, 'yellow', '20px times')
+            text3.desenhaTexto('Vida:', 800,20, 'yellow', '20px times')
+            text4.desenhaTexto(tanque.vida,850,20, ' yellow', '20px times')
+        } 
+    }else{
+        bg.desenha_img()
+        text5.desenhaTexto('Game Over', 500, 230, 'black', '40px times')
+    }
 
 }
 
