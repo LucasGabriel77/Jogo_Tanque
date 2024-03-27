@@ -1,5 +1,43 @@
 let des = document.getElementById('desenha').getContext('2d')
 
+
+
+
+
+
+document.addEventListener('keydown', (e)=>{
+    // console.log(e.key)
+    if(e.key === 'a' || e.key === 'ArrowLeft' || e.key === 'A'){
+        tanque.dirX -= 2
+    }
+    else if(e.key === 'd' || e.key === 'ArrowRight' || e.key === 'D'){
+        tanque.dirX += 2
+    }
+    else if(e.key === 'w' || e.key === 'ArrowUp' || e.key === 'W'){
+        tanque.dirY -= 2
+    }
+    else if(e.key === 's' || e.key === 'ArrowDown' || e.key === 'S'){
+        tanque.dirY += 2
+    }
+})
+
+document.addEventListener('keyup', (e)=> {
+    // console.log(e.key)
+    if(e.key === 'a' || e.key === 'ArrowLeft' || e.key === 'A'){
+        tanque.dirX = 0
+    }
+    else if(e.key === 'd' || e.key === 'ArrowRight' || e.key === 'D'){
+        tanque.dirX = 0
+    }
+    else if(e.key === 'w' || e.key === 'ArrowUp' || e.key === 'W'){
+        tanque.dirY = 0
+    }
+    else if(e.key === 's' || e.key === 'ArrowDown' || e.key === 'S'){
+        tanque.dirY = 0
+    }
+})
+
+
 function gameOver(){}
 
 function colisao(){

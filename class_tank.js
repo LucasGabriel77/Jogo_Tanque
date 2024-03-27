@@ -31,8 +31,23 @@ class Tanque extends Objeto{
     vida = 5
     frame = 1
     tempo = 0
-    
-    atualiza_tanque(){
+
+ atualiza_tanque(){
+        this.x += this.dirX
+        this.y += this.dirY
+        
+        if(this.x <0){
+            this.x = 0
+        }
+        else if(this.x > 260){
+            this.x = 260
+        }
+        if(this.y <= 120){
+            this.y = 120
+        }
+        else if(this.y >=300){
+            this.y = 300
+        }
     } 
 
     pontos(objeto){
