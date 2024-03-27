@@ -8,7 +8,7 @@ let text3 = new Text()
 let text4 = new Text()
 let text5 = new Text()
 let game2 = document.getElementById('game2')
-let grupoTiros = []
+let grupoTiros = [] 
 let tiros = {
     des(){
         grupoTiros.forEach((tiro)=>{
