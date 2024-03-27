@@ -1,8 +1,8 @@
 let des = document.getElementById('desenha').getContext('2d')
 let tanque = new Tanque (100,200,70,70,"../Assets/tanque_01.png")
-let bg = new Objeto (0,0,1200,450,"../Assets/bg1.png")
+let bg = new Cenario (0,0,1300,450,"../Assets/bg1.png")
 let bg2 = new Cenario (1300,0,1300,450,"../Assets/bg2.png")
-let fase2 = new Objeto(0,0,1200,450, "../Assets/fase2.png")
+let bg3 = new Cenario (2600,0,1300,450,"../Assets/bg1.png")
 let text1 = new Text()
 let text2 = new Text()
 let text3 = new Text()
@@ -136,6 +136,7 @@ function desenha(){
     if(jogar){
         bg.desenha_img()
         bg2.desenha_img()
+        bg3.desenha_img()
         tiros.des()
         tanque.desenha_img()
         inimigos.des()
@@ -143,7 +144,7 @@ function desenha(){
         text2.desenhaTexto(tanque.pts, 1065, 20, 'yellow', '20px times')
         text3.desenhaTexto('Vida:', 800,20, 'yellow', '20px times')
         text4.desenhaTexto(tanque.vida,850,20, ' yellow', '20px times')
-        if(tanque.pts>= 50){
+            if(tanque.pts>= 50){
             fase2.desenha_img()
             tiros.des()
             tanque.desenha_img()
@@ -157,17 +158,18 @@ function desenha(){
         bg.desenha_img()
         text5.desenhaTexto('Game Over', 500, 230, 'black', '40px times')
     }
+    }
 
-}
 
 function atualiza(){
     if(jogar){
-    bg.mov(0,-2600)
-    bg2.mov(1300,-1300)
-    tanque.atualiza_tanque()
-    tiros.atual()
-    inimigos.atual()
-    colisao()
+        tanque.atualiza_tanque()
+        tiros.atual()
+        inimigos.atual()
+        colisao()
+        bg.mov(0,-2600)
+        bg2.mov(1300,-1300)
+        bg3.mov(2600,0)
     }
     gameOver()
 }

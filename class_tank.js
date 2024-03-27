@@ -75,24 +75,24 @@ class Tanque extends Objeto{
 }
 
 class Inimigos extends Objeto{
-    vel = 1.75
+    vel = 2.5
 
     mov(){
         this.x -= this.vel
         if(tanque.pts >= 50){
-            this.vel = 2.25
+            this.vel = 3
             this.x -= this.vel  
         }
         if(tanque.pts >= 100){
-            this.vel = 2.50
+            this.vel = 3.5
             this.x -= this.vel  
         }
         if(tanque.pts >= 150){
-            this.vel = 2.75
+            this.vel = 4
             this.x -= this.vel  
         }
         if(tanque.pts >= 200){
-            this.vel = 3
+            this.vel = 4.5
             this.x -= this.vel  
         }
     }
@@ -110,9 +110,8 @@ class Tiro extends Objeto{
 }
 
 class Cenario extends Objeto{
-
     mov(ini,lim){
-        this.x -= 7
+        this.x -= 1.5
         if(this.x < lim){
             this.x = ini 
         }
