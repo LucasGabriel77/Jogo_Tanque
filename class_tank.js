@@ -13,11 +13,25 @@ class Objeto{
     desenha_img(){
     }
 
-    colid(objeto) {
+    colid(objeto){
+        if((this.x < objeto.x + objeto.w)&&
+        (this.x + this.w > objeto.x)&&
+        (this.y < objeto.y + objeto.h)&&
+        (this.y + this.h > objeto.y)){
+            return true
+        }else{
+            false
+        }
     }
 }
 class Tanque extends Objeto{
-
+    dirX = 0
+    dirY = 0
+    pts = 0
+    vida = 5
+    frame = 1
+    tempo = 0
+    
     atualiza_tanque(){
     } 
 
@@ -25,6 +39,14 @@ class Tanque extends Objeto{
     }
     
     colid(objeto){
+        if((this.x < objeto.x + objeto.w)&&
+        (this.x + this.w > objeto.x)&&
+        (this.y < objeto.y + objeto.h)&&
+        (this.y + this.h > objeto.y)){
+            return true
+        }else{
+            false
+        }
     }
 }
 
