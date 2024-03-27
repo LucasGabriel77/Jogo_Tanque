@@ -1,6 +1,7 @@
 let des = document.getElementById('desenha').getContext('2d')
 let tanque = new Tanque (100,200,70,70,"../Assets/tanque_01.png")
-let bg = new Objeto (0,0,1200,450,"../Assets/normal.png")
+let bg = new Objeto (0,0,1200,450,"../Assets/bg1.png")
+let bg2 = new Cenario (1300,0,1300,450,"../Assets/bg2.png")
 let fase2 = new Objeto(0,0,1200,450, "../Assets/fase2.png")
 let text1 = new Text()
 let text2 = new Text()
@@ -134,6 +135,7 @@ function colisao(){
 function desenha(){  
     if(jogar){
         bg.desenha_img()
+        bg2.desenha_img()
         tiros.des()
         tanque.desenha_img()
         inimigos.des()
@@ -160,6 +162,8 @@ function desenha(){
 
 function atualiza(){
     if(jogar){
+    bg.mov(0,-2600)
+    bg2.mov(1300,-1300)
     tanque.atualiza_tanque()
     tiros.atual()
     inimigos.atual()

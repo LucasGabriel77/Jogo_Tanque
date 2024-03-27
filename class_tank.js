@@ -75,16 +75,55 @@ class Tanque extends Objeto{
 }
 
 class Inimigos extends Objeto{
+    vel = 1.75
 
+    mov(){
+        this.x -= this.vel
+        if(tanque.pts >= 50){
+            this.vel = 2.25
+            this.x -= this.vel  
+        }
+        if(tanque.pts >= 100){
+            this.vel = 2.50
+            this.x -= this.vel  
+        }
+        if(tanque.pts >= 150){
+            this.vel = 2.75
+            this.x -= this.vel  
+        }
+        if(tanque.pts >= 200){
+            this.vel = 3
+            this.x -= this.vel  
+        }
+    }
+}
+class Tiro extends Objeto{
+    des_tiro(){
+        let img = new Image()
+        img.src = this.a
+        des.drawImage(img,this.x,this.y,this.w,this.h)
+    }
+
+    mov(){
+        this.x += 5
+    }
 }
 
 class Cenario extends Objeto{
 
+    mov(ini,lim){
+        this.x -= 7
+        if(this.x < lim){
+            this.x = ini 
+        }
+    }
 }
 
-class Tiro extends Objeto{
-
-}
-
-class Text{
+class Text {
+    desenhaTexto (text,x,y,cor,font){
+    des.fillStyle = cor
+    des.lineWidth = '5'
+    des.font = font
+    des.fillText(text,x,y) 
+    } 
 }
