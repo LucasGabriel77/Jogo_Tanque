@@ -23,17 +23,18 @@ canvas{
     box-shadow: 1px 1px 5px black;
 }
 
-
 div{
     padding: 10px;
     text-align: center;
     margin: auto;
-    margin-bottom: 10px;
     border-radius: 15px;
     width: 450px;
-    height: 560px;
+    height: 350px;
     color: rgb(0, 0, 0);
+}
 
+a{
+    color: rgba(0, 0, 0, 0);
 }
 
 img{

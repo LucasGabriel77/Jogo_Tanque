@@ -166,8 +166,6 @@ function atualiza(){
     colisao()
     }
     gameOver()
-    
-   
 }
 
 function main(){
