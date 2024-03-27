@@ -136,7 +136,15 @@ function desenha(){
 }
 
 function atualiza(){
-
+    if(jogar){
+    tanque.atualiza_tanque()
+    tiros.atual()
+    inimigos.atual()
+    colisao()
+    }
+    gameOver()
+    
+   
 }
 
 function main(){
