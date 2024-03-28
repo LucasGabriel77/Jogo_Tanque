@@ -10,7 +10,15 @@ let text4 = new Text()
 let text5 = new Text()
 let game2 = document.getElementById('game2')
 
-let podeatirar = true
+let musica = new Audio('../Sounds/musica.wav')
+let tirosom = new Audio('../Sounds/tiros.wav')
+let andar = new Audio('../Sounds/andar.wav')
+andar.volume = 0.08
+andar.loop = true
+musica.volume = 0.17
+musica.loop = true
+tirosom.volume = 0.2
+
 let grupoTiros = []
 let tiros = {
     des(){
@@ -34,6 +42,7 @@ document.addEventListener('keyup', (e)=>{
     if (e.key === 'l' || e.key === 'L') {
         grupoTiros.push(new Tiro(tanque.x - 2 + tanque.w / 1, tanque.y + 30, 10, 10, "../Assets/tiro1.png"))
         setTimeout(() => {}, 500); 
+        tirosom.play()
     }
 })
 
@@ -123,6 +132,8 @@ function gameOver(){
     if(tanque.vida <= 0){
         jogar = false
         game2.style.display = "block"
+        andar.pause()
+        musica.pause()
     }
 }
 
@@ -165,6 +176,8 @@ function atualiza(){
         bg.mov(0,-2600)
         bg2.mov(1300,-1300)
         bg3.mov(2600,0)
+        andar.play()
+        musica.play()
     }
     gameOver()
 }
