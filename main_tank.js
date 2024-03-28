@@ -174,11 +174,7 @@ function atualiza(){
     gameOver()
 }
 
-function main(){
-    des.clearRect(0,0,1200,450)
-    desenha()
-    atualiza()
-}
+
 
 function resetar(){
     console.log(tanque.vida)
@@ -194,4 +190,10 @@ function resetar(){
     window.location.reload();
 }
 
-setInterval(main,10)
+function main(){
+    des.clearRect(0,0,1200,450)
+    desenha()
+    atualiza()
+    window.requestAnimationFrame(main)
+}
+    window.requestAnimationFrame(main)
