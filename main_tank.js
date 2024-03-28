@@ -10,6 +10,7 @@ let text4 = new Text()
 let text5 = new Text()
 let game2 = document.getElementById('game2')
 
+let podeatirar = true
 let grupoTiros = []
 let tiros = {
     des(){
@@ -29,9 +30,10 @@ let tiros = {
 
 let jogar = true
 
-document.addEventListener('keypress', (e)=>{
+document.addEventListener('keyup', (e)=>{
     if (e.key === 'l' || e.key === 'L') {
         grupoTiros.push(new Tiro(tanque.x - 2 + tanque.w / 1, tanque.y + 30, 10, 10, "../Assets/tiro1.png"))
+        setTimeout(() => {}, 500); 
     }
 })
 
