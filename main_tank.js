@@ -145,7 +145,6 @@ function desenha(){
         text3.desenhaTexto('Vida:', 800,20, 'yellow', '20px times')
         text4.desenhaTexto(tanque.vida,850,20, ' yellow', '20px times')
             if(tanque.pts>= 50){
-            fase2.desenha_img()
             tiros.des()
             tanque.desenha_img()
             inimigos.des()
@@ -158,7 +157,7 @@ function desenha(){
         bg.desenha_img()
         text5.desenhaTexto('Game Over', 500, 230, 'black', '40px times')
     }
-    }
+}
 
 
 function atualiza(){
@@ -174,12 +173,6 @@ function atualiza(){
     gameOver()
 }
 
-function main(){
-    des.clearRect(0,0,1200,450)
-    desenha()
-    atualiza()
-}
-
 function resetar(){
     console.log(tanque.vida)
     jogar = true
@@ -192,6 +185,13 @@ function resetar(){
     grupoInimigos = 0
     grupoTiros = 0
     window.location.reload();
+}
+
+function main(){
+    des.clearRect(0,0,1200,450)
+    desenha()
+    atualiza()
+
 }
 
 setInterval(main,10)
