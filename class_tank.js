@@ -105,7 +105,7 @@ class Tiro extends Objeto{
     }
 
     mov(){
-        this.x += 5
+        this.x += 6
     }
 }
 

@@ -6,7 +6,9 @@
 
 body{
     background-color:  #E1B848;
-        background-attachment: fixed;
+    background-attachment: fixed;
+    text-align: center;
+    margin: auto;
 }
 
     
@@ -40,6 +42,4 @@ a{
 img{
     border-radius: 15px;
     box-shadow: 3px 3px 1px;
-}   
-
-
+}  
