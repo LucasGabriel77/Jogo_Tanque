@@ -52,12 +52,17 @@ img{
     z-index: 1;
     margin: 5px;
     padding: 5px;
-    background-color: transparent;
-    border-color: transparent;
+    border-radius: 10px;
+    background-color: black;
+    color: whitesmoke;
+    box-shadow: 1px 3px 5px white;
 }
 
 #game2 {
     display: none;
 }
 
+#game2:hover{
+    color: #E1B848;
+}
 
