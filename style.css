@@ -11,7 +11,9 @@ body{
     margin: auto;
 }
 
-    
+bottum{
+    margin-left: 100px;
+}
 
 canvas{
     
@@ -42,4 +44,27 @@ a{
 img{
     border-radius: 15px;
     box-shadow: 3px 3px 1px;
-}  
+}   
+
+#game2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, 50%);
+    z-index: 1;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: black;
+    color: whitesmoke;
+    box-shadow: 1px 3px 5px white;
+}
+
+#game2 {
+    display: none;
+}
+
+#game2:hover{
+    color: #E1B848;
+}
+

@@ -151,7 +151,7 @@ function desenha(){
         bg3.desenha_img()
         text5.desenhaTexto('Game Over', 500, 230, 'black', '40px times')
     }
-    }
+}
 
 
 function atualiza(){
@@ -166,7 +166,6 @@ function atualiza(){
     }
     gameOver()
 }
-
 
 function main(){
     des.clearRect(0,0,1200,450)
@@ -195,3 +194,5 @@ function main(){
     window.requestAnimationFrame(main)
 }
     window.requestAnimationFrame(main)
+
+

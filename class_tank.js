@@ -79,19 +79,19 @@ class Inimigos extends Objeto{
 
     mov(){
         this.x -= this.vel
-        if(tanque.pts >= 50){
+        if(tanque.pts >= 30){
             this.vel = 3
             this.x -= this.vel  
         }
-        if(tanque.pts >= 100){
+        if(tanque.pts >= 60){
             this.vel = 3.5
             this.x -= this.vel  
         }
-        if(tanque.pts >= 150){
+        if(tanque.pts >= 100){
             this.vel = 4
             this.x -= this.vel  
         }
-        if(tanque.pts >= 200){
+        if(tanque.pts >= 150){
             this.vel = 4.5
             this.x -= this.vel  
         }
